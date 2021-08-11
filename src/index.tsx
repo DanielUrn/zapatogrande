@@ -1,12 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {BrowserRouter,Route,Switch} from 'react-router-dom'
+
+import productsList from './components/productos/plist'
+import Navbar from './components/navbar/Navbar'
+
+import 'bootswatch/dist/pulse/bootstrap.min.css'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+
+      <Navbar></Navbar>
+
+      <Switch>
+        <Route exact path="/" component={productsList} />
+      </Switch>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
